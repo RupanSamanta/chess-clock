@@ -1,0 +1,5 @@
+# SCSS / Sass cache
+*.sass-cache
+*.scssc
+*.scss
+*.sass
