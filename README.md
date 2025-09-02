@@ -34,7 +34,7 @@ Check out the live demo [here](https://your-live-demo-link.com).
     
     chess-clock/
     ├── index.html       # Main HTML file
-    ├── style/style.css      # App styling
+    ├── style.css        # App styling
     ├── script.js        # App logic
     ├── assets/          # Images, sounds, favicon
     └── README.md
