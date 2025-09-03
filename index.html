@@ -25,11 +25,59 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/82872eeccd.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <!-- Content will go here -->
-
+    <main>
+        <section id="timer-section">
+            
+            <div class="player-timer player-A">
+                <div class="internal-controls moves-container">
+                    <span>Moves: </span>
+                    <span class="moves">0</span>
+                </div>
+                <div class="internal-controls time-adjust-container">
+                    <span class="time-adjust-button">
+                        <i class="fa-solid fa-sliders"></i>
+                    </span>
+                    <span class="time-format">10 min</span>
+                </div>
+                <div class="time-left">10:00</div>
+            </div>
+            
+            <div class="player-timer player-B">
+                <div class="internal-controls moves-container">
+                    <span>Moves: </span>
+                    <span class="moves">0</span>
+                </div>
+                <div class="internal-controls time-adjust-container">
+                    <span class="time-adjust-button">
+                        <i class="fa-solid fa-sliders"></i>
+                    </span>
+                    <span class="time-format">10 min</span>
+                </div>
+                <div class="time-left">10:00</div>
+            </div>
+            
+            <div class="timer-settings">
+                <button>
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+            
+        </section>
+        
+        <section id="settings-section"></section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
