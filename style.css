@@ -1,5 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Rubik", arial;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+main section {
+  width: 100%;
+  height: 100%;
+}
+
+main section#timer-section {
+  background-color: #4b4b4b7c;
+}
+
+main section#timer-section .player-timer {
+  width: 100%;
+  height: 50%;
+  max-height: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+  align-items: center;
+}
+
+main section#timer-section .player-timer .internal-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-end;
+  align-items: center;
+}
+
+main section#timer-section .player-timer .time-left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7.5rem;
+  font-weight: 600;
+  color: #1b1b1f;
 }
