@@ -1,7 +1,16 @@
-# SCSS / Sass cache
-*.sass-cache
-*.scssc
-*.scss
-*.sass
+# Ignore build/dist folders
+dist/
+build/
 
-.github
+# Ignore SCSS files (keep only compiled CSS)
+*.scss
+
+# Ignore .github folder (actions, workflows, templates)
+.github/
+
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
