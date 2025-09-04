@@ -49,7 +49,7 @@ main #timer-section .player-timer {
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  background-color: #4b4b4b7c;
+  background-color: #8B8987;
   padding: 1.1rem;
 }
 
@@ -70,7 +70,7 @@ main #timer-section .player-timer .time-left {
   transform: translate(-50%, -50%);
   font-size: 7.2rem;
   font-weight: 600;
-  color: #1b1b1f;
+  color: #292928;
 }
 
 main #timer-section .player-timer .time-adjust-container {
@@ -87,11 +87,19 @@ main #timer-section .timer-settings {
   justify-content: space-around;
   align-items: center;
   gap: 0;
-  background-color: #1b1b1f;
+  background-color: #292928;
   padding: 1.1rem;
 }
 
 main #timer-section .timer-settings button {
-  color: #4b4b4b7c;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #8B8987;
   font-size: 1.7rem;
+  border-radius: 50%;
+  transition: all 0.5s ease-out;
+}
+
+main #timer-section .timer-settings button:active {
+  background-color: #535251;
 }
