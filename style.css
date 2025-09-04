@@ -4,13 +4,20 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", arial;
+  border: solid 0 yellow;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 main {
@@ -23,35 +30,68 @@ main section {
   height: 100%;
 }
 
-main section#timer-section {
-  background-color: #4b4b4b7c;
+main #timer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
 }
 
-main section#timer-section .player-timer {
+main #timer-section .player-timer {
   width: 100%;
-  height: 50%;
   max-height: 50%;
+  flex-basis: 0;
+  flex-grow: 1;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-items: space-between;
+  justify-content: space-between;
   align-items: center;
+  gap: 0;
+  background-color: #4b4b4b7c;
+  padding: 1.1rem;
 }
 
-main section#timer-section .player-timer .internal-controls {
+main #timer-section .player-timer > div {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-items: flex-end;
+  justify-content: center;
   align-items: center;
+  gap: 0.7rem;
+  font-size: 1.2rem;
 }
 
-main section#timer-section .player-timer .time-left {
+main #timer-section .player-timer .time-left {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 7.5rem;
+  font-size: 7.2rem;
   font-weight: 600;
   color: #1b1b1f;
+}
+
+main #timer-section .player-timer .time-adjust-container {
+  justify-content: flex-start;
+}
+
+main #timer-section .player-A {
+  transform: rotateZ(180deg);
+}
+
+main #timer-section .timer-settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+  background-color: #1b1b1f;
+  padding: 1.1rem;
+}
+
+main #timer-section .timer-settings button {
+  color: #4b4b4b7c;
+  font-size: 1.7rem;
 }
