@@ -6,7 +6,7 @@ build/
 *.scss
 
 # Ignore .github folder (actions, workflows, templates)
-.github/
+#.github/
 
 # Ignore OS/system files
 .DS_Store
