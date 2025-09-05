@@ -77,8 +77,12 @@ main #timer-section .player-timer .time-adjust-container {
   justify-content: flex-start;
 }
 
-main #timer-section .player-A {
+main #timer-section #player-A {
   transform: rotateZ(180deg);
+}
+
+main #timer-section .active-player {
+  background-color: #4682B4;
 }
 
 main #timer-section .timer-settings {
