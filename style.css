@@ -50,7 +50,8 @@ main #timer-section .player-timer {
   align-items: center;
   gap: 0;
   background-color: #8B8987;
-  padding: 1.1rem;
+  color: #292928;
+  padding: 1rem;
 }
 
 main #timer-section .player-timer > div {
@@ -70,7 +71,7 @@ main #timer-section .player-timer .time-left {
   transform: translate(-50%, -50%);
   font-size: 7.2rem;
   font-weight: 600;
-  color: #292928;
+  color: inherit;
 }
 
 main #timer-section .player-timer .time-adjust-container {
@@ -78,11 +79,16 @@ main #timer-section .player-timer .time-adjust-container {
 }
 
 main #timer-section #player-A {
-  transform: rotateZ(180deg);
+  transform: rotateZ(0deg);
 }
 
 main #timer-section .active-player {
   background-color: #4682B4;
+  color: #FFFFFF;
+}
+
+main #timer-section .time-up {
+  background-color: #FE6F5E;
 }
 
 main #timer-section .timer-settings {
@@ -92,7 +98,7 @@ main #timer-section .timer-settings {
   align-items: center;
   gap: 0;
   background-color: #292928;
-  padding: 1.1rem;
+  padding: 0.75rem;
 }
 
 main #timer-section .timer-settings button {
