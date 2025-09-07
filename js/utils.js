@@ -1,4 +1,4 @@
-export function msToTimeFormat(ms) {
+export function getFormattedTime(ms) {
     let totalSeconds = Math.floor(ms / 1000);
     let sec = totalSeconds % 60;
     let min = Math.floor(totalSeconds / 60) % 60;

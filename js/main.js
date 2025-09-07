@@ -1,5 +1,5 @@
 import { players, intervalId, timeLeftBox, movesBox, buttons } from './setup.js';
-import { msToTimeFormat } from './utils.js';
+import { getFormattedTime } from './utils.js';
 
 function switchTurn(currentKey, nextKey) {
     const current = players[currentKey];
@@ -23,12 +23,12 @@ function switchTurn(currentKey, nextKey) {
     // Start ticking
     intervalId[nextKey] = setInterval(() => {
         next.updateTime();
-        timeLeftBox[nextKey].innerText = next.getFormattedTime();
         if (next.timeUp) {
             next.elem.classList.add('time-up');
             clearInterval(intervalId[nextKey]);
         }
-    }, 250);
+        timeLeftBox[nextKey].innerText = getFormattedTime(next.timeLeft);
+    }, 1000);
 }
 
 // Hook up events
@@ -38,6 +38,6 @@ players.B.elem.addEventListener('click', () => switchTurn('B', 'A'));
 document.addEventListener("DOMContentLoaded", () => {
     Object.keys(players).forEach(key => {
         console.log(players[key].timeLeft);
-        timeLeftBox[key].innerText = players[key].getFormattedTime();
+        timeLeftBox[key].innerText = getFormattedTime(players[key].timeLeft);
     });
 });

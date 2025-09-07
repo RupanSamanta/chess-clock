@@ -1,5 +1,3 @@
-import { msToTimeFormat } from './utils.js';
-
 export default class Player {
     constructor(id, initTime = 10000, increment = 0) {
         this.elem = document.getElementById(id);
@@ -8,7 +6,7 @@ export default class Player {
         this.active = false;
         this.timeUp = false;
         this.increment = increment; // per move increment
-        this.lastUpdate = null;
+       // this.lastUpdate = null;
     }
 
     startTurn() {
@@ -23,19 +21,15 @@ export default class Player {
     }
 
     updateTime() {
-        if (!this.active || this.timeUp) return;
-        
-        const now = new Date();
-        const elapsed = now - this.lastUpdate;
-        this.timeLeft -= elapsed;
-        this.lastUpdate = now;
-
+        console.log(true)
+        if (!this.active) return;
+       /* const now = new Date();
+        const elapsed = now - this.lastUpdate;*/
+        this.timeLeft -= 1000;
+        //this.lastUpdate = now;
         if (this.timeLeft <= 0) {
             this.timeUp = true;
+            return;
         }
-    }
-    getFormattedTime() {
-        this.updateTime();
-        return msToTimeFormat(this.timeLeft);
     }
 }
