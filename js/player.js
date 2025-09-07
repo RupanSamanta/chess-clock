@@ -21,7 +21,6 @@ export default class Player {
     }
 
     updateTime() {
-        console.log(true)
         if (!this.active) return;
        /* const now = new Date();
         const elapsed = now - this.lastUpdate;*/
@@ -31,5 +30,8 @@ export default class Player {
             this.timeUp = true;
             return;
         }
+    }
+    isStartMove() {
+        return (this.moves == 0 && !this.active);
     }
 }

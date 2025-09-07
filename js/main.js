@@ -7,6 +7,7 @@ function switchTurn(currentKey, nextKey) {
     
     if (next.timeUp || current.timeUp) return;
     
+    console.log('worked by ' + currentKey);
     // Toggle active-player CSS
     current.elem.classList.remove('active-player');
     next.elem.classList.add('active-player');
@@ -19,6 +20,7 @@ function switchTurn(currentKey, nextKey) {
 
     // Start next turn
     next.startTurn();
+   // clearInterval(intervalId[nextKey]);
 
     // Start ticking
     intervalId[nextKey] = setInterval(() => {
