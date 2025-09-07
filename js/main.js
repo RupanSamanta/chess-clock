@@ -1,45 +1,13 @@
 import { players, intervalId, timeLeftBox, movesBox, buttons } from './setup.js';
-import { getFormattedTime } from './utils.js';
-
-function switchTurn(currentKey, nextKey) {
-    const current = players[currentKey];
-    const next = players[nextKey];
-    
-    if (next.timeUp || current.timeUp) return;
-    
-    console.log('worked by ' + currentKey);
-    // Toggle active-player CSS
-    current.elem.classList.remove('active-player');
-    next.elem.classList.add('active-player');
-
-    // End current turn, stop its timer
-    current.endTurn();
-    if (intervalId[currentKey] == null) current.moves = 0;
-    movesBox[currentKey].innerText = current.moves;
-    clearInterval(intervalId[currentKey]);
-
-    // Start next turn
-    next.startTurn();
-   // clearInterval(intervalId[nextKey]);
-
-    // Start ticking
-    intervalId[nextKey] = setInterval(() => {
-        next.updateTime();
-        if (next.timeUp) {
-            next.elem.classList.add('time-up');
-            clearInterval(intervalId[nextKey]);
-        }
-        timeLeftBox[nextKey].innerText = getFormattedTime(next.timeLeft);
-    }, 1000);
-}
+import { getFormattedTime, playTimer, updateTimeLeftHTML, resetClock, switchTurn } from './utils.js';
 
 // Hook up events
 players.A.elem.addEventListener('click', () => switchTurn('A', 'B'));
 players.B.elem.addEventListener('click', () => switchTurn('B', 'A'));
 
+buttons.play.addEventListener('click', playTimer);
+buttons.reset.addEventListener('click', resetClock);
+
 document.addEventListener("DOMContentLoaded", () => {
-    Object.keys(players).forEach(key => {
-        console.log(players[key].timeLeft);
-        timeLeftBox[key].innerText = getFormattedTime(players[key].timeLeft);
-    });
+    updateTimeLeftHTML();
 });

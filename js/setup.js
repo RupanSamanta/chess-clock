@@ -1,8 +1,8 @@
 import Player from './player.js';
 
 export const players = {
-  A: new Player('player-A', 10000),
-  B: new Player('player-B')
+  A: new Player('player-A', 10*60*1000),
+  B: new Player('player-B', 10*60*1000)
 };
 
 export const intervalId = { 
@@ -21,9 +21,9 @@ export const movesBox = {
 };
 
 export const buttons = {
-  fullscreen: document.getElementById('fullscreen-button'),
+ //fullscreen: document.getElementById('fullscreen-button'),
   reset: document.getElementById('reset-button'),
-  play: document.getElementById('play-button'),
-  settings: document.getElementById('settings-button'),
-  mute: document.getElementById('mute-button')
+  play: document.getElementById('play-button')
+ // settings: document.getElementById('settings-button'),
+ // mute: document.getElementById('mute-button')
 };

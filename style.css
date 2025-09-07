@@ -51,7 +51,7 @@ main #timer-section .player-timer {
   gap: 0;
   background-color: #8B8987;
   color: #292928;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 main #timer-section .player-timer > div {
