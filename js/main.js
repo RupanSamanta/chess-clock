@@ -5,7 +5,7 @@ function switchTurn(currentKey, nextKey) {
     const current = players[currentKey];
     const next = players[nextKey];
     
-    if (next.timeUp) return;
+    if (next.timeUp || current.timeUp) return;
     
     // Toggle active-player CSS
     current.elem.classList.remove('active-player');
@@ -14,7 +14,6 @@ function switchTurn(currentKey, nextKey) {
     // End current turn, stop its timer
     current.endTurn();
     if (intervalId[currentKey] == null) current.moves = 0;
-    
     movesBox[currentKey].innerText = current.moves;
     clearInterval(intervalId[currentKey]);
 
@@ -23,15 +22,22 @@ function switchTurn(currentKey, nextKey) {
 
     // Start ticking
     intervalId[nextKey] = setInterval(() => {
-        next.updateTime(1000);
-        timeLeftBox[nextKey].innerText = msToTimeFormat(next.timeLeft);
+        next.updateTime();
+        timeLeftBox[nextKey].innerText = next.getFormattedTime();
         if (next.timeUp) {
             next.elem.classList.add('time-up');
             clearInterval(intervalId[nextKey]);
         }
-    }, 1000);
+    }, 250);
 }
 
 // Hook up events
 players.A.elem.addEventListener('click', () => switchTurn('A', 'B'));
 players.B.elem.addEventListener('click', () => switchTurn('B', 'A'));
+
+document.addEventListener("DOMContentLoaded", () => {
+    Object.keys(players).forEach(key => {
+        console.log(players[key].timeLeft);
+        timeLeftBox[key].innerText = players[key].getFormattedTime();
+    });
+});

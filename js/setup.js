@@ -1,7 +1,7 @@
 import Player from './player.js';
 
 export const players = {
-  A: new Player('player-A'),
+  A: new Player('player-A', 5),
   B: new Player('player-B')
 };
 
