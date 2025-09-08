@@ -27,35 +27,35 @@ export function updateTimeLeftHTML() {
 export function switchTurn(currentKey, nextKey) {
     const current = players[currentKey];
     const next = players[nextKey];
-    
+
     if (next.timeUp || current.timeUp) return;
-   /* if (intervalId[currentKey] != null &&  !current.active) return;
-    */
-    // Toggle active-player CSS
+
+    // Toggle CSS
     current.elem.classList.remove('active-player');
     next.elem.classList.add('active-player');
 
-    // End current turn, stop its timer
-    current.endTurn();
-    if (intervalId[currentKey] == null) current.moves = 0;
-    movesBox[currentKey].innerText = current.moves;
+    // Only end if current was really active
+    if (current.active) {
+        current.endTurn();
+        movesBox[currentKey].innerText = current.moves;
+    }
     clearInterval(intervalId[currentKey]);
 
     // Start next turn
     next.startTurn();
     clearInterval(intervalId[nextKey]);
 
-    // Start ticking
     intervalId[nextKey] = setInterval(() => {
         next.updateTime();
         if (next.timeUp) {
             next.elem.classList.add('time-up');
             clearInterval(intervalId[nextKey]);
         }
-        timeLeftBox[nextKey].innerText = getFormattedTime(next.timeLeft);
-    }, 1000);
-    
-    // other ui changes
+        timeLeftBox[nextKey].innerText =
+            getFormattedTime(Math.ceil(next.timeLeft / 1000) * 1000);
+    }, 250);
+
+    // Update UI
     buttons.play.innerHTML = '<i class="fa-solid fa-pause"></i>';
     buttons.play.value = 1;
 }
