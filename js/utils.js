@@ -114,3 +114,7 @@ export function resetClock() {
         }
     }, 150);
 }
+
+export fucntion setFullScreen {
+    
+}

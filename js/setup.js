@@ -21,7 +21,7 @@ export const movesBox = {
 };
 
 export const buttons = {
- //fullscreen: document.getElementById('fullscreen-button'),
+ fullscreen: document.getElementById('fullscreen-button'),
   reset: document.getElementById('reset-button'),
   play: document.getElementById('play-button')
  // settings: document.getElementById('settings-button'),
