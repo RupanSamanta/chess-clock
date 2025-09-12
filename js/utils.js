@@ -115,6 +115,18 @@ export function resetClock() {
     }, 150);
 }
 
-export fucntion setFullScreen {
-    
+export function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+export function updateFullscreenUI() {
+    if (document.fullscreenElement) {
+        buttons.fullscreen.innerHTML = '<i class="fa-solid fa-compress"></i>';
+    } else {
+        buttons.fullscreen.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    }
 }
