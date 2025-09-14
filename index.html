@@ -32,8 +32,8 @@
         <section id="timer-section">
             
             <div class="player-timer" id="player-A">
-                <div class="time-adjust-container">
-                    <span class="time-adjust-button">
+                <div class="time-adjust-button">
+                    <span>
                         <i class="fa-solid fa-sliders"></i>
                     </span>
                     <span class="time-format">10 min</span>
@@ -64,8 +64,8 @@
             </div>
             
             <div class="player-timer" id="player-B">
-                <div class="time-adjust-container">
-                    <span class="time-adjust-button">
+                <div class="time-adjust-button">
+                    <span>
                         <i class="fa-solid fa-sliders"></i>
                     </span>
                     <span class="time-format">10 min</span>
@@ -77,6 +77,22 @@
                 <div class="time-left">10:00</div>
             </div>
             
+        </section>
+        
+        <section class="adjust-timer-section">
+            <div class="adjust-timer">
+                <span class="header">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Adjust Time</span>
+                </span>
+                <div class="timers">
+                    <div class="timer-block">
+                        <input type="time" id="time-picker" step="1">
+                    </div>
+                    <div class="timer-block"></div>
+                    <div class="timer-block"></div>
+                </div>
+            </div>
         </section>
         
         <section id="settings-section"></section>
