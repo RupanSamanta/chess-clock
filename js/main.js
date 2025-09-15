@@ -1,5 +1,5 @@
 import { players, intervalId, timeLeftBox, movesBox, buttons } from './setup.js';
-import { getFormattedTime, playTimer, updateTimeLeftHTML, resetClock, switchTurn, toggleFullscreen, updateFullscreenUI } from './utils.js';
+import { getFormattedTime, playTimer, updateTimeLeftHTML, resetClock, switchTurn, toggleFullscreen, updateFullscreenUI, setAdjustTimer } from './utils.js';
 
 players.A.elem.addEventListener('click', () => {
     // Case 1: play is running → normal handoff
@@ -36,5 +36,8 @@ buttons.play.addEventListener('click', playTimer);
 buttons.reset.addEventListener('click', resetClock);
 buttons.fullscreen.addEventListener('click', toggleFullscreen);
 
-document.addEventListener("DOMContentLoaded",  updateTimeLeftHTML);
+document.addEventListener("DOMContentLoaded",  ()=> {
+    updateTimeLeftHTML();
+    setAdjustTimer();
+});
 document.addEventListener('fullscreenchange', updateFullscreenUI);

@@ -27,3 +27,9 @@ export const buttons = {
  // settings: document.getElementById('settings-button'),
  // mute: document.getElementById('mute-button')
 };
+
+export const adjustTimer = {
+    hour: document.getElementById('hour-select'),
+    minute: document.getElementById('minute-select'),
+    second: document.getElementById('second-select')
+};

@@ -170,6 +170,7 @@ main .adjust-timer-section .adjust-timer .timer-block select {
   width: 100%;
   height: 100%;
   text-align: center;
+  font-size: 3rem;
 }
 
 main .adjust-timer-section .adjust-timer .adjust-box-buttons {

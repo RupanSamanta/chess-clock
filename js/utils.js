@@ -1,4 +1,4 @@
-import { players, buttons, intervalId, timeLeftBox, movesBox } from './setup.js';
+import { players, buttons, intervalId, timeLeftBox, movesBox, adjustTimer } from './setup.js';
 
 export function getFormattedTime(ms) {
     // converting to sec, min, hour
@@ -129,4 +129,19 @@ export function updateFullscreenUI() {
     } else {
         buttons.fullscreen.innerHTML = '<i class="fa-solid fa-expand"></i>';
     }
+}
+
+function createOptions(elem, min, max) {
+    while (min <= max) {
+        const option = document.createElement('option');
+        option.innerText = min.toString().padStart(2, '0');
+        option.value = min.toString().padStart(2, '0');
+        elem.appendChild(option);
+        min++;
+    }
+}
+export function setAdjustTimer() {
+    createOptions(adjustTimer.hour, 0, 59);
+    createOptions(adjustTimer.minute, 0, 59);
+    createOptions(adjustTimer.second, 1, 59);
 }
