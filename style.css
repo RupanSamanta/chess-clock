@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", arial;
+  user-select: none;
   border: solid 0 yellow;
 }
 
@@ -14,6 +15,11 @@ button, input, select {
   outline: none;
   color: #8B8987;
   background-color: transparent;
+}
+
+button:active {
+  background-color: #969493;
+  color: #292928;
 }
 
 html, body {
@@ -117,10 +123,6 @@ main #timer-section .timer-settings button {
   transition: all 0.5s ease-out;
 }
 
-main #timer-section .timer-settings button:active {
-  background-color: #969493;
-}
-
 main .adjust-timer-section {
   position: absolute;
   top: 50%;
@@ -138,11 +140,11 @@ main .adjust-timer-section {
 
 main .adjust-timer-section .adjust-timer {
   width: fit-content;
-  max-width: 28rem;
+  max-width: 25rem;
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   gap: 1.75rem;
   flex-wrap: wrap;
@@ -160,8 +162,7 @@ main .adjust-timer-section .adjust-timer .header {
 main .adjust-timer-section .adjust-timer .timer-block {
   width: 5.5rem;
   height: 6rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: inherit;
+  margin-bottom: 1rem;
 }
 
 main .adjust-timer-section .adjust-timer .timer-block select {
@@ -169,8 +170,20 @@ main .adjust-timer-section .adjust-timer .timer-block select {
   webkit-appearance: none;
   width: 100%;
   height: 100%;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.15);
   text-align: center;
   font-size: 3rem;
+  border-radius: 0.75rem;
+}
+
+main .adjust-timer-section .adjust-timer .timer-block select:hover {
+  background-color: #4682B4;
+}
+
+main .adjust-timer-section .adjust-timer .timer-block span {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 main .adjust-timer-section .adjust-timer .adjust-box-buttons {
@@ -184,4 +197,7 @@ main .adjust-timer-section .adjust-timer .adjust-box-buttons {
 
 main .adjust-timer-section .adjust-timer .adjust-box-buttons button {
   font-size: 1.2rem;
+  padding: 0.75rem 0.85rem;
+  outline: solid 0.1rem #969493;
+  border-radius: 0.75rem;
 }
