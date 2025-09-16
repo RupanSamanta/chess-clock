@@ -140,8 +140,25 @@ function createOptions(elem, min, max) {
         min++;
     }
 }
+
 export function setAdjustTimer() {
     createOptions(adjustTimer.hour, 0, 59);
     createOptions(adjustTimer.minute, 0, 59);
     createOptions(adjustTimer.second, 1, 59);
+}
+
+function getMillisecond(hour=0, min=0, sec=0) {
+    return ((hour * 60 + min) * 60 + sec) * 1000;
+}
+
+export function saveNewTimer() {
+    const adjust_player = document.getElementsByClassName('adjust-timer')[0].dataset.adjustTimer;
+    console.log(adjust_player);
+    players[adjust_player].totalTime = 
+    players[adjust_player].timeLeft = getMillisecond(
+            adjustTimer.hour.value,
+            adjustTimer.minute.value,
+            adjustTimer.second.value
+        );
+    updateTimeLeftHTML();
 }

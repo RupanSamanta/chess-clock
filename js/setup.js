@@ -23,7 +23,9 @@ export const movesBox = {
 export const buttons = {
  fullscreen: document.getElementById('fullscreen-button'),
   reset: document.getElementById('reset-button'),
-  play: document.getElementById('play-button')
+  play: document.getElementById('play-button'),
+  saveTimer: document.getElementById('save-time'),
+  cancelTimer: document.getElementById('cancel-timer')
  // settings: document.getElementById('settings-button'),
  // mute: document.getElementById('mute-button')
 };
