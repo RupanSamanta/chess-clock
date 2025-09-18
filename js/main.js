@@ -37,8 +37,15 @@ buttons.reset.addEventListener('click', resetClock);
 buttons.fullscreen.addEventListener('click', toggleFullscreen);
 buttons.saveTimer.addEventListener('click', saveNewTimer);
 buttons.cancelTimer.addEventListener('click', ()=> {
-    document.getElementsByClassName('adjust-timer-section')[0]
-    .style.display = 'none';
+    document.getElementById('adjust-timer-section').style.display = 'none';
+});
+
+Array.from(buttons.timeAdjustButtons).forEach((button)=> {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        document.getElementById('adjust-timer-section').style.display = 'flex';
+        document.getElementById('adjust-timer').data.adjustTimer = this.data.adjust;
+    });
 });
 
 document.addEventListener("DOMContentLoaded",  ()=> {
