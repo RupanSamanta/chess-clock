@@ -44,7 +44,8 @@ Array.from(buttons.timeAdjustButtons).forEach((button)=> {
     button.addEventListener('click', function(event) {
         event.stopPropagation();
         document.getElementById('adjust-timer-section').style.display = 'flex';
-        document.getElementById('adjust-timer').data.adjustTimer = this.data.adjust;
+        document.getElementById('adjust-timer').dataset.adjustTimer = this.dataset.adjust;
+        
     });
 });
 

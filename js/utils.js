@@ -58,6 +58,8 @@ export function switchTurn(currentKey, nextKey) {
     // Update UI
     buttons.play.innerHTML = '<i class="fa-solid fa-pause"></i>';
     buttons.play.value = 1;
+    Array.from(buttons.timeAdjustButtons)
+    .forEach(button => button.style.display = 'none');
 }
 
 export function playTimer() {
@@ -69,6 +71,7 @@ export function playTimer() {
         });
         buttons.play.innerHTML = '<i class="fa-solid fa-play"></i>';
         buttons.play.value = 0;
+        Array.from(buttons.timeAdjustButtons).forEach(button => button.style.display = 'flex');
         return;
     }
 
@@ -99,6 +102,8 @@ export function playTimer() {
     }
 
     buttons.play.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    Array.from(buttons.timeAdjustButtons)
+    .forEach(button => button.style.display = 'none');
 }
 
 export function resetClock() {
@@ -152,11 +157,14 @@ function getMillisecond(hour=0, min=0, sec=0) {
 }
 
 export function saveNewTimer() {
-    const adjust_player = document.getElementsByClassName('adjust-timer')[0].dataset.adjustTimer;
+    const adjust_player = document.getElementById('adjust-timer').dataset.adjustTimer;
     players[adjust_player].timeLeft = getMillisecond(
             adjustTimer.hour.value,
             adjustTimer.minute.value,
             adjustTimer.second.value
         );
+    setTimeout(() => {
+        buttons.cancelTimer.click();
+    }, 300);
     updateTimeLeftHTML();
 }
