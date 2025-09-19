@@ -199,6 +199,14 @@ main #adjust-timer-section #adjust-timer .adjust-box-buttons {
 main #adjust-timer-section #adjust-timer .adjust-box-buttons button {
   font-size: 1.2rem;
   padding: 0.75rem 0.85rem;
-  outline: solid 0.1rem #969493;
+  border: solid 0.1rem #969493;
   border-radius: 0.75rem;
 }
+
+/*@media screen and (min-width: 768px) {
+    
+}
+
+@media screen and (orientation: ladscape) {
+    
+}*/
