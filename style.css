@@ -5,10 +5,14 @@
   box-sizing: border-box;
   font-family: "Outfit", arial;
   user-select: none;
-  border: solid 0 yellow;
 }
 
-button, input, select {
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+/*#4682B4;*/
+button, select {
   appearance: none;
   -webkit-appearance: none;
   border: none;
@@ -95,7 +99,7 @@ main #timer-section #player-A {
 }
 
 main #timer-section .active-player {
-  background-color: #4682B4;
+  background-color: #39e292;
   color: #FFFFFF;
 }
 
@@ -179,7 +183,7 @@ main #adjust-timer-section #adjust-timer .timer-block select {
 }
 
 main #adjust-timer-section #adjust-timer .timer-block select:hover {
-  background-color: #4682B4;
+  background-color: #39e292;
 }
 
 main #adjust-timer-section #adjust-timer .timer-block span {
@@ -235,7 +239,7 @@ main #controls-settings-section .section-header button {
 main #controls-settings-section .preset-time {
   font-size: 1.2rem;
   color: #969493;
-  padding: 0.75rem;
+  padding: 1.25rem;
 }
 
 main #controls-settings-section .preset-time label {
@@ -251,23 +255,37 @@ main #controls-settings-section .preset-time label {
   color: #FFFFFF;
 }
 
-main #controls-settings-section .preset-time input[type="radio"] {
+main #controls-settings-section .preset-time label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
   width: 1.5rem;
   height: 1.5rem;
-  border: solid 0.15rem #4682B4;
+  border: solid 0.15rem #969493;
   border-radius: 50%;
+  display: grid;
+  place-content: center;
 }
 
-main #controls-settings-section .preset-time input[type="radio"]::before {
-  content: '';
-  width: 0.1rem;
-  height: 0.1rem;
+main #controls-settings-section .preset-time label input[type="radio"]::before {
+  content: "";
+  width: 0.85rem;
+  height: 0.85rem;
+  box-shadow: inset 1rem 1rem #39e292;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.25s ease;
+}
+
+main #controls-settings-section .preset-time label input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+main #controls-settings-section .preset-time label input[type="radio"]:checked {
+  border-color: #39e292;
 }
 
 /*@media screen and (min-width: 768px) {
-    
 }
 
 @media screen and (orientation: ladscape) {
-    
 }*/
