@@ -26,7 +26,7 @@ export const buttons = {
     play: document.getElementById('play-button'),
     saveTimer: document.getElementById('save-time'),
     cancelTimer: document.getElementById('cancel-timer'),
-    timeAdjustButtons: document.getElementsByClassName('time-adjust-button')
+    timeAdjustButtons: document.getElementsByClassName('time-adjust-button'),
     settings: document.getElementById('settings-button'),
     mute: document.getElementById('mute-button'),
     returnBack: document.getElementById('return-back'),

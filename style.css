@@ -22,6 +22,7 @@ button, input, select {
   outline: none;
   color: #8B8987;
   background-color: transparent;
+  transition: all 0.25s ease;
 }
 
 button:active {
@@ -213,12 +214,14 @@ main #adjust-timer-section #adjust-timer .adjust-box-buttons button {
 main #controls-settings-section {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 150%;
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  display: none;
   background-color: #292928;
   overflow-y: auto;
+  transition: all 0.3s ease-in-out;
 }
 
 main #controls-settings-section .section-header {

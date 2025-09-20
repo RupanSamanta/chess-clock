@@ -16,7 +16,8 @@ import {
     setAdjustTimer,
     saveNewTimer,
     createPresetList,
-    createThemeList
+    createThemeList,
+    initStartNewTimer
 } from './utils.js';
 
 players.A.elem.addEventListener('click', () => {
@@ -57,8 +58,21 @@ buttons.saveTimer.addEventListener('click', saveNewTimer);
 buttons.cancelTimer.addEventListener('click', ()=> {
     document.getElementById('adjust-timer-section').style.display = 'none';
 });
+buttons.settings.addEventListener('click', ()=> {
+    buttons.play.value = 1;
+    buttons.play.click();
+    const controlsBody = document.getElementById('controls-settings-section');
+    controlsBody.style.display = 'block';
+    setTimeout(() => {
+        controlsBody.style.left = '50%';
+    }, 100);
+});
 buttons.returnBack.addEventListener('click', ()=> {
-    document.getElementById('controls-settings-section').style.transform = 'translateX(100%)';
+    const controlsBody = document.getElementById('controls-settings-section');
+    controlsBody.style.left = '150%';
+    setTimeout(() => {
+        controlsBody.style.display = 'none';
+    }, 300);
 });
 buttons.startNewTimer.addEventListener('click', ()=> {
     initStartNewTimer();

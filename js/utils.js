@@ -9,6 +9,8 @@ import {
     themeColor
 } from './setup.js';
 
+import Player from './player.js';
+
 export function getFormattedTime(ms) {
     // converting to sec, min, hour
     let totalSeconds = Math.floor(ms / 1000);
@@ -202,9 +204,9 @@ export function createThemeList() {
 }
 
 export function initStartNewTimer() {
-    let timer_obj; 
+    let timer_obj;
     const preset_timer = document.querySelectorAll('input[name="preset-timer"]');
-    for (let i=0; i<preset_timer.length; i++) {
+    for (let i = 0; i < preset_timer.length; i++) {
         if (preset_timer[i].checked) {
             timer_obj = presetTime[i];
             break;
@@ -212,6 +214,6 @@ export function initStartNewTimer() {
     }
     players.A = new Player('player-A', timer_obj.totalTime, timer_obj.increment);
     players.B = new Player('player-B', timer_obj.totalTime, timer_obj.increment);
-    
+
     updateTimeLeftHTML();
 }
