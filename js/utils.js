@@ -216,4 +216,6 @@ export function initStartNewTimer() {
     players.B = new Player('player-B', timer_obj.totalTime, timer_obj.increment);
 
     updateTimeLeftHTML();
+    Array.from(document.getElementsByClassName('time-format'))
+    .forEach(elem => elem.innerText = timer_obj.title);
 }
