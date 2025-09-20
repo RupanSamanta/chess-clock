@@ -60,7 +60,7 @@ buttons.cancelTimer.addEventListener('click', ()=> {
 buttons.returnBack.addEventListener('click', ()=> {
     document.getElementById('controls-settings-section').style.transform = 'translateX(100%)';
 });
-buttons.startNewTimer.addEventListener('click' ()=> {
+buttons.startNewTimer.addEventListener('click', ()=> {
     initStartNewTimer();
     buttons.returnBack.click();
 });
