@@ -15,7 +15,8 @@ import {
     updateFullscreenUI,
     setAdjustTimer,
     saveNewTimer,
-    createPresetList
+    createPresetList,
+    createThemeList
 } from './utils.js';
 
 players.A.elem.addEventListener('click', () => {
@@ -70,5 +71,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
     updateTimeLeftHTML();
     setAdjustTimer();
     createPresetList();
+    createThemeList();
 });
 document.addEventListener('fullscreenchange', updateFullscreenUI);

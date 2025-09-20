@@ -19,12 +19,12 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/82872eeccd.js" crossorigin="anonymous"></script>
+    <!--script src="https://kit.fontawesome.com/82872eeccd.js" crossorigin="anonymous"></script-->
 </head>
 <body>
     <main>
         <section id="timer-section">
-            
+
             <div class="player-timer" id="player-A">
                 <div class="moves-container">
                     <span>Moves: </span>
@@ -36,9 +36,11 @@
                     </span>
                     <span class="time-format">10 min</span>
                 </div>
-                <div class="time-left">10:00</div>
+                <div class="time-left">
+                    10:00
+                </div>
             </div>
-            
+
             <div class="timer-settings">
                 <button id="fullscreen-button">
                     <i class="fa-solid fa-expand"></i>
@@ -56,7 +58,7 @@
                     <i class="fa-solid fa-volume-high"></i>
                 </button>
             </div>
-            
+
             <div class="player-timer" id="player-B">
                 <div class="moves-container">
                     <span>Moves: </span>
@@ -68,11 +70,13 @@
                     </span>
                     <span class="time-format">10 min</span>
                 </div>
-                <div class="time-left">10:00</div>
+                <div class="time-left">
+                    10:00
+                </div>
             </div>
-            
+
         </section>
-        
+
         <section id="controls-settings-section">
             <div class="section-header">
                 <button class="return-back">
@@ -80,17 +84,22 @@
                 </button>
                 <span>Controls and Settings</span>
             </div>
-            
+
             <div class="preset-time">
-                <div>Presets</div>
+                <div>
+                    Presets
+                </div>
                 <button id="start-new-timer">Start</button>
             </div>
-            
-            <div class="app-settings">
-                
+
+            <div class="theme-settings">
+                <div>
+                    Theme Color
+                </div>
+                <div id="theme-colors-box"></div>
             </div>
         </section>
-        
+
         <section id="adjust-timer-section">
             <div id="adjust-timer" data-adjust-timer="A">
                 <div class="header">
@@ -98,16 +107,16 @@
                     <span>Adjust Time</span>
                 </div>
                 <div class="timer-block">
-                        <select id="hour-select"></select>
-                        <span>Hour</span>
+                    <select id="hour-select"></select>
+                    <span>Hour</span>
                 </div>
                 <div class="timer-block">
-                        <select id="minute-select"></select>
-                        <span>Minute</span>
+                    <select id="minute-select"></select>
+                    <span>Minute</span>
                 </div>
                 <div class="timer-block">
-                        <select id="second-select"></select>
-                        <span>Second</span>
+                    <select id="second-select"></select>
+                    <span>Second</span>
                 </div>
                 <div class="adjust-box-buttons">
                     <button id="save-time">Save Time</button>
@@ -115,7 +124,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="settings-section"></section>
     </main>
     <script type="module" src="js/main.js"></script>

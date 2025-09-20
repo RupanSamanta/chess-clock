@@ -5,7 +5,8 @@ import {
     timeLeftBox,
     movesBox,
     adjustTimer,
-    presetTime
+    presetTime,
+    themeColor
 } from './setup.js';
 
 export function getFormattedTime(ms) {
@@ -189,4 +190,13 @@ export function createPresetList() {
         <input type="radio" name="preset-timer" value="${ind}" ${obj.totalTime == 600000 ? 'checked': ''}/>`;
         presetTimeBody.insertBefore(label, presetTimeBody.lastElementChild);
     });
+}
+
+export function createThemeList() {
+    const themeBody = document.getElementById('theme-colors-box');
+    themeColor.forEach((val)=> {
+        themeBody.innerHTML +=
+        `<input type="radio" name="theme-color" value="${val}" style="--color: ${val};"/>`;
+    });
+    themeBody.firstElementChild.checked = true;
 }
