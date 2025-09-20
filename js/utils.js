@@ -1,4 +1,12 @@
-import { players, buttons, intervalId, timeLeftBox, movesBox, adjustTimer } from './setup.js';
+import {
+    players,
+    buttons,
+    intervalId,
+    timeLeftBox,
+    movesBox,
+    adjustTimer,
+    presetTime
+} from './setup.js';
 
 export function getFormattedTime(ms) {
     // converting to sec, min, hour
@@ -7,7 +15,7 @@ export function getFormattedTime(ms) {
     let min = Math.floor(totalSeconds / 60) % 60;
     let hour = Math.floor(totalSeconds / 3600);
 
-    // formatting 
+    // formatting
     if (hour > 0) {
         return `${hour}:${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
     } else if (min > 0) {
@@ -52,8 +60,9 @@ export function switchTurn(currentKey, nextKey) {
             clearInterval(intervalId[nextKey]);
         }
         timeLeftBox[nextKey].innerText =
-            getFormattedTime(Math.ceil(next.timeLeft / 1000) * 1000);
-    }, 250);
+        getFormattedTime(Math.ceil(next.timeLeft / 1000) * 1000);
+    },
+        250);
 
     // Update UI
     buttons.play.innerHTML = '<i class="fa-solid fa-pause"></i>';
@@ -90,7 +99,7 @@ export function playTimer() {
         const active = players[activeKey];
         active.startTurn();
         active.elem.classList.add('active-player');
-        
+
         intervalId[activeKey] = setInterval(() => {
             active.updateTime();
             if (active.timeUp) {
@@ -98,7 +107,8 @@ export function playTimer() {
                 clearInterval(intervalId[activeKey]);
             }
             timeLeftBox[activeKey].innerText = getFormattedTime(active.timeLeft);
-        }, 1000);
+        },
+            1000);
     }
 
     buttons.play.innerHTML = '<i class="fa-solid fa-pause"></i>';
@@ -117,7 +127,8 @@ export function resetClock() {
             });
             updateTimeLeftHTML();
         }
-    }, 150);
+    },
+        150);
 }
 
 export function toggleFullscreen() {
@@ -152,19 +163,30 @@ export function setAdjustTimer() {
     createOptions(adjustTimer.second, 0, 59);
 }
 
-function getMillisecond(hour=0, min=0, sec=0) {
+function getMillisecond(hour = 0, min = 0, sec = 0) {
     return ((hour * 60 + min*1) * 60 + sec*1) * 1000;
 }
 
 export function saveNewTimer() {
     const adjust_player = document.getElementById('adjust-timer').dataset.adjustTimer;
     players[adjust_player].timeLeft = getMillisecond(
-            adjustTimer.hour.value,
-            adjustTimer.minute.value,
-            adjustTimer.second.value
-        );
+        adjustTimer.hour.value,
+        adjustTimer.minute.value,
+        adjustTimer.second.value
+    );
     setTimeout(() => {
         buttons.cancelTimer.click();
     }, 300);
     updateTimeLeftHTML();
+}
+
+export function createPresetList() {
+    const presetTimeBody = document.getElementsByClassName('preset-time')[0];
+    presetTime.forEach((obj, ind)=> {
+        const label = document.createElement('label');
+        label.innerHTML =
+        `<span>${obj.title}</span>
+        <input type="radio" name="preset-timer" value="${ind}" ${obj.totalTime == 600000 ? 'checked': ''}/>`;
+        presetTimeBody.insertBefore(label, presetTimeBody.lastElementChild);
+    });
 }

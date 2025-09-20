@@ -1,5 +1,22 @@
-import { players, intervalId, timeLeftBox, movesBox, buttons } from './setup.js';
-import { getFormattedTime, playTimer, updateTimeLeftHTML, resetClock, switchTurn, toggleFullscreen, updateFullscreenUI, setAdjustTimer, saveNewTimer } from './utils.js';
+import {
+    players,
+    intervalId,
+    timeLeftBox,
+    movesBox,
+    buttons
+} from './setup.js';
+import {
+    getFormattedTime,
+    playTimer,
+    updateTimeLeftHTML,
+    resetClock,
+    switchTurn,
+    toggleFullscreen,
+    updateFullscreenUI,
+    setAdjustTimer,
+    saveNewTimer,
+    createPresetList
+} from './utils.js';
 
 players.A.elem.addEventListener('click', () => {
     // Case 1: play is running → normal handoff
@@ -45,12 +62,13 @@ Array.from(buttons.timeAdjustButtons).forEach((button)=> {
         event.stopPropagation();
         document.getElementById('adjust-timer-section').style.display = 'flex';
         document.getElementById('adjust-timer').dataset.adjustTimer = this.dataset.adjust;
-        
+
     });
 });
 
-document.addEventListener("DOMContentLoaded",  ()=> {
+document.addEventListener("DOMContentLoaded", ()=> {
     updateTimeLeftHTML();
     setAdjustTimer();
+    createPresetList();
 });
 document.addEventListener('fullscreenchange', updateFullscreenUI);

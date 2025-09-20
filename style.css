@@ -250,7 +250,7 @@ main #controls-settings-section .preset-time label {
   align-items: center;
   gap: 0;
   padding: 0.5rem;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
   padding-left: 0;
   color: #FFFFFF;
 }
@@ -282,6 +282,17 @@ main #controls-settings-section .preset-time label input[type="radio"]:checked::
 
 main #controls-settings-section .preset-time label input[type="radio"]:checked {
   border-color: #39e292;
+}
+
+main #controls-settings-section .preset-time #start-new-timer {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.35);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  border: solid 0.1rem #39e292;
 }
 
 /*@media screen and (min-width: 768px) {
