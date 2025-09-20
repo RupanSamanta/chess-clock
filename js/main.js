@@ -57,6 +57,13 @@ buttons.saveTimer.addEventListener('click', saveNewTimer);
 buttons.cancelTimer.addEventListener('click', ()=> {
     document.getElementById('adjust-timer-section').style.display = 'none';
 });
+buttons.returnBack.addEventListener('click', ()=> {
+    document.getElementById('controls-settings-section').style.transform = 'translateX(100%)';
+});
+buttons.startNewTimer.addEventListener('click' ()=> {
+    initStartNewTimer();
+    buttons.returnBack.click();
+});
 
 Array.from(buttons.timeAdjustButtons).forEach((button)=> {
     button.addEventListener('click', function(event) {
@@ -72,5 +79,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
     setAdjustTimer();
     createPresetList();
     createThemeList();
+    document.querySelectorAll('input[name="theme-color"]')
+    .forEach((input) => {
+        input.addEventListener('change', (e)=> {
+            if (e.target.checked) {
+                document.documentElement.style
+                .setProperty('--activeBlockColor', e.target.value);
+            }
+        });
+    });
 });
 document.addEventListener('fullscreenchange', updateFullscreenUI);

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+:root {
+  --activeBlockColor: #7BA05B;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -98,7 +102,7 @@ main #timer-section #player-A {
 }
 
 main #timer-section .active-player {
-  background-color: #7BA05B;
+  background-color: var(--activeBlockColor);
   color: #FFFFFF;
 }
 
@@ -182,7 +186,7 @@ main #adjust-timer-section #adjust-timer .timer-block select {
 }
 
 main #adjust-timer-section #adjust-timer .timer-block select:hover {
-  background-color: #7BA05B;
+  background-color: var(--activeBlockColor);
 }
 
 main #adjust-timer-section #adjust-timer .timer-block span {
@@ -273,7 +277,7 @@ main #controls-settings-section .preset-time label input[type="radio"]::before, 
   content: "";
   width: 0.85rem;
   height: 0.85rem;
-  box-shadow: inset 1rem 1rem #7BA05B;
+  box-shadow: inset 1rem 1rem var(--activeBlockColor);
   border-radius: 50%;
   transform: scale(0);
   transition: all 0.25s ease;
@@ -284,7 +288,7 @@ main #controls-settings-section .preset-time label input[type="radio"]:checked::
 }
 
 main #controls-settings-section .preset-time label input[type="radio"]:checked, main #controls-settings-section .theme-settings label input[type="radio"]:checked {
-  border-color: #7BA05B;
+  border-color: var(--activeBlockColor);
 }
 
 main #controls-settings-section .preset-time #start-new-timer, main #controls-settings-section .theme-settings #start-new-timer {
@@ -296,6 +300,11 @@ main #controls-settings-section .preset-time #start-new-timer, main #controls-se
   color: #FFFFFF;
   border-radius: 0.75rem;
   border: solid 0.175rem #969493;
+}
+
+main #controls-settings-section .preset-time #start-new-timer:hover, main #controls-settings-section .theme-settings #start-new-timer:hover {
+  background-color: var(--activeBlockColor);
+  border-color: var(--activeBlockColor);
 }
 
 main #controls-settings-section .theme-settings {

@@ -200,3 +200,18 @@ export function createThemeList() {
     });
     themeBody.firstElementChild.checked = true;
 }
+
+export function initStartNewTimer() {
+    let timer_obj; 
+    const preset_timer = document.querySelectorAll('input[name="preset-timer"]');
+    for (let i=0; i<preset_timer.length; i++) {
+        if (preset_timer[i].checked) {
+            timer_obj = presetTime[i];
+            break;
+        }
+    }
+    players.A = new Player('player-A', timer_obj.totalTime, timer_obj.increment);
+    players.B = new Player('player-B', timer_obj.totalTime, timer_obj.increment);
+    
+    updateTimeLeftHTML();
+}

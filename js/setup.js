@@ -27,8 +27,10 @@ export const buttons = {
     saveTimer: document.getElementById('save-time'),
     cancelTimer: document.getElementById('cancel-timer'),
     timeAdjustButtons: document.getElementsByClassName('time-adjust-button')
-    // settings: document.getElementById('settings-button'),
-    // mute: document.getElementById('mute-button')
+    settings: document.getElementById('settings-button'),
+    mute: document.getElementById('mute-button'),
+    returnBack: document.getElementById('return-back'),
+    startNewTimer: document.getElementById('start-new-timer')
 };
 
 export const adjustTimer = {
@@ -104,6 +106,6 @@ export const presetTime = [{
     }];
 
 export const themeColor = [
-    '#7BA05B', '#4682B4', '#9966CC', '#CD7F32',
-    '#CD5C5C', '#DAA520', '#30D5C8', '#CC8899'
+    '#7BA05B', '#008080', '#4682B4', '#CD7F32',
+    '#CD5C5C', '#DAA520', '#9966CC', '#CC8899'
 ];
