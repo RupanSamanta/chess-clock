@@ -51,7 +51,9 @@ export function switchTurn(currentKey, nextKey) {
         movesBox[currentKey].innerText = current.moves;
     }
     clearInterval(intervalId[currentKey]);
-
+    timeLeftBox[currentKey].innerText =
+    getFormattedTime(Math.ceil(current.timeLeft / 1000) * 1000);
+    
     // Start next turn
     next.startTurn();
     clearInterval(intervalId[nextKey]);
