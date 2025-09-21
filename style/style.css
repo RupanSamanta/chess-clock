@@ -42,12 +42,10 @@ main {
   width: 100%;
   height: 100%;
 }
-
 main section {
   width: 100%;
   height: 100%;
 }
-
 main #timer-section {
   display: flex;
   flex-direction: column;
@@ -56,7 +54,6 @@ main #timer-section {
   gap: 0.5rem;
   padding: 0.5rem;
 }
-
 main #timer-section .player-timer {
   width: 100%;
   max-height: 50%;
@@ -73,7 +70,6 @@ main #timer-section .player-timer {
   padding: 1.5rem;
   border-radius: 1.07rem;
 }
-
 main #timer-section .player-timer > div {
   width: 100%;
   display: flex;
@@ -83,7 +79,6 @@ main #timer-section .player-timer > div {
   gap: 0.7rem;
   font-size: 1.2rem;
 }
-
 main #timer-section .player-timer .time-left {
   position: absolute;
   top: 50%;
@@ -93,24 +88,19 @@ main #timer-section .player-timer .time-left {
   font-weight: 600;
   color: inherit;
 }
-
 main #timer-section .player-timer .time-adjust-button {
   justify-content: flex-start;
 }
-
 main #timer-section #player-A {
   transform: rotateZ(180deg);
 }
-
 main #timer-section .active-player {
   background-color: var(--activeBlockColor);
   color: #FFFFFF;
 }
-
 main #timer-section .time-up {
   background-color: #FE6F5E;
 }
-
 main #timer-section .timer-settings {
   display: flex;
   flex-direction: row;
@@ -122,7 +112,6 @@ main #timer-section .timer-settings {
   border-radius: 1.07rem;
   border: solid 0.15rem #969493;
 }
-
 main #timer-section .timer-settings button {
   width: 3.5rem;
   height: 3.5rem;
@@ -130,7 +119,6 @@ main #timer-section .timer-settings button {
   border-radius: 50%;
   transition: all 0.5s ease-out;
 }
-
 main #adjust-timer-section {
   position: absolute;
   top: 50%;
@@ -146,7 +134,6 @@ main #adjust-timer-section {
   display: none;
   background: rgba(0, 0, 0, 0.5);
 }
-
 main #adjust-timer-section #adjust-timer {
   width: fit-content;
   max-width: 25rem;
@@ -163,17 +150,14 @@ main #adjust-timer-section #adjust-timer {
   padding: 1.8rem;
   border-radius: 0.75rem;
 }
-
 main #adjust-timer-section #adjust-timer .header {
   width: 100%;
 }
-
 main #adjust-timer-section #adjust-timer .timer-block {
   width: 5.5rem;
   height: 6rem;
   margin-bottom: 1rem;
 }
-
 main #adjust-timer-section #adjust-timer .timer-block select {
   appearance: none;
   webkit-appearance: none;
@@ -185,16 +169,13 @@ main #adjust-timer-section #adjust-timer .timer-block select {
   font-size: 3rem;
   border-radius: 0.75rem;
 }
-
 main #adjust-timer-section #adjust-timer .timer-block select:hover {
   background-color: var(--activeBlockColor);
 }
-
 main #adjust-timer-section #adjust-timer .timer-block span {
   font-size: 1rem;
   font-weight: 400;
 }
-
 main #adjust-timer-section #adjust-timer .adjust-box-buttons {
   width: 100%;
   display: flex;
@@ -203,14 +184,12 @@ main #adjust-timer-section #adjust-timer .adjust-box-buttons {
   align-items: center;
   gap: 2rem;
 }
-
 main #adjust-timer-section #adjust-timer .adjust-box-buttons button {
   font-size: 1.2rem;
   padding: 0.75rem 0.85rem;
   border: solid 0.1rem #969493;
   border-radius: 0.75rem;
 }
-
 main #controls-settings-section {
   position: absolute;
   top: 50%;
@@ -223,7 +202,6 @@ main #controls-settings-section {
   overflow-y: auto;
   transition: all 0.3s ease-in-out;
 }
-
 main #controls-settings-section .section-header {
   display: flex;
   flex-direction: row;
@@ -238,21 +216,18 @@ main #controls-settings-section .section-header {
   position: absolute;
   top: 0;
 }
-
 main #controls-settings-section .section-header button {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.2rem;
   color: #FFFFFF;
 }
-
 main #controls-settings-section .preset-time, main #controls-settings-section .theme-settings {
   font-size: 1.2rem;
   color: #969493;
   padding: 1.25rem;
   margin: 4rem 0 0 0;
 }
-
 main #controls-settings-section .preset-time label, main #controls-settings-section .theme-settings label {
   width: 100%;
   display: flex;
@@ -265,8 +240,7 @@ main #controls-settings-section .preset-time label, main #controls-settings-sect
   padding-left: 0;
   color: #FFFFFF;
 }
-
-main #controls-settings-section .preset-time label input[type="radio"], main #controls-settings-section .theme-settings label input[type="radio"] {
+main #controls-settings-section .preset-time label input[type=radio], main #controls-settings-section .theme-settings label input[type=radio] {
   width: 1.5rem;
   height: 1.5rem;
   border: solid 0.15rem #969493;
@@ -275,8 +249,7 @@ main #controls-settings-section .preset-time label input[type="radio"], main #co
   place-content: center;
   transition: all 0.25s ease;
 }
-
-main #controls-settings-section .preset-time label input[type="radio"]::before, main #controls-settings-section .theme-settings label input[type="radio"]::before {
+main #controls-settings-section .preset-time label input[type=radio]::before, main #controls-settings-section .theme-settings label input[type=radio]::before {
   content: "";
   width: 0.85rem;
   height: 0.85rem;
@@ -285,15 +258,12 @@ main #controls-settings-section .preset-time label input[type="radio"]::before, 
   transform: scale(0);
   transition: all 0.25s ease;
 }
-
-main #controls-settings-section .preset-time label input[type="radio"]:checked::before, main #controls-settings-section .theme-settings label input[type="radio"]:checked::before {
+main #controls-settings-section .preset-time label input[type=radio]:checked::before, main #controls-settings-section .theme-settings label input[type=radio]:checked::before {
   transform: scale(1);
 }
-
-main #controls-settings-section .preset-time label input[type="radio"]:checked, main #controls-settings-section .theme-settings label input[type="radio"]:checked {
+main #controls-settings-section .preset-time label input[type=radio]:checked, main #controls-settings-section .theme-settings label input[type=radio]:checked {
   border-color: var(--activeBlockColor);
 }
-
 main #controls-settings-section .preset-time #start-new-timer, main #controls-settings-section .theme-settings #start-new-timer {
   width: 100%;
   padding: 1rem 0;
@@ -304,16 +274,13 @@ main #controls-settings-section .preset-time #start-new-timer, main #controls-se
   border-radius: 0.75rem;
   border: solid 0.175rem #969493;
 }
-
 main #controls-settings-section .preset-time #start-new-timer:hover, main #controls-settings-section .theme-settings #start-new-timer:hover {
   background-color: var(--activeBlockColor);
   border-color: var(--activeBlockColor);
 }
-
 main #controls-settings-section .theme-settings {
   margin: 0;
 }
-
 main #controls-settings-section .theme-settings #theme-colors-box {
   margin: 0.75rem;
   display: flex;
@@ -323,8 +290,7 @@ main #controls-settings-section .theme-settings #theme-colors-box {
   gap: 0.75rem;
   flex-wrap: wrap;
 }
-
-main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"] {
+main #controls-settings-section .theme-settings #theme-colors-box input[type=radio] {
   width: 5rem;
   height: 2.5rem;
   border: solid 0.15rem var(--color);
@@ -334,8 +300,7 @@ main #controls-settings-section .theme-settings #theme-colors-box input[type="ra
   place-content: center;
   transition: all 0.25s ease;
 }
-
-main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"]::before {
+main #controls-settings-section .theme-settings #theme-colors-box input[type=radio]::before {
   content: "";
   width: calc(5rem - 12px);
   height: calc(2.5rem - 12px);
@@ -344,12 +309,10 @@ main #controls-settings-section .theme-settings #theme-colors-box input[type="ra
   transform: scale(0);
   transition: all 0.25s ease;
 }
-
-main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"]:checked::before {
+main #controls-settings-section .theme-settings #theme-colors-box input[type=radio]:checked::before {
   transform: scale(1);
 }
-
-main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"]:checked {
+main #controls-settings-section .theme-settings #theme-colors-box input[type=radio]:checked {
   background-color: transparent;
 }
 
@@ -358,3 +321,5 @@ main #controls-settings-section .theme-settings #theme-colors-box input[type="ra
 
 @media screen and (orientation: ladscape) {
 }*/
+
+/*# sourceMappingURL=style.css.map */
