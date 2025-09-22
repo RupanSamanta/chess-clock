@@ -36,6 +36,7 @@ export function updateTimeLeftHTML() {
 }
 
 export function switchTurn(currentKey, nextKey) {
+    playAudio('play');
     const current = players[currentKey];
     const next = players[nextKey];
 
@@ -61,6 +62,7 @@ export function switchTurn(currentKey, nextKey) {
     intervalId[nextKey] = setInterval(() => {
         next.updateTime();
         if (next.timeUp) {
+            playAudio('timeup');
             next.elem.classList.add('time-up');
             clearInterval(intervalId[nextKey]);
             buttons.play.disabled = true;
@@ -90,6 +92,7 @@ export function playTimer() {
         return;
     }
 
+    playAudio('play');
     // play/resume
     buttons.play.value = 1;
 
@@ -108,7 +111,7 @@ export function playTimer() {
 
         intervalId[activeKey] = setInterval(() => {
             active.updateTime();
-            if (active.timeUp) {
+            if (active.timeUp) {playAudio('timeup');
                 active.elem.classList.add('time-up');
                 buttons.play.disabled = true;
                 clearInterval(intervalId[activeKey]);
@@ -117,7 +120,6 @@ export function playTimer() {
         },
             1000);
     }
-
     buttons.play.innerHTML = '<i class="fa-solid fa-pause"></i>';
     Array.from(buttons.timeAdjustButtons)
     .forEach(button => button.style.display = 'none');
@@ -128,6 +130,7 @@ export function resetClock() {
     playTimer();
     setTimeout(() => {
         if (confirm('Reset Clock?')) {
+            playAudio('reset');
             Object.keys(players).forEach(key => {
                 players[key].reset();
                 players[key].elem.classList.remove('time-up');
@@ -225,3 +228,22 @@ export function initStartNewTimer() {
     Array.from(document.getElementsByClassName('time-format'))
     .forEach(elem => elem.innerText = timer_obj.title);
 }
+
+function playAudio(type) {
+    let name;
+    switch (type) {
+        case 'play':
+            name = 'start-click';
+            break;
+        case 'reset':
+            name = 'reset-click';
+            break;
+        case 'timeup':
+            name = 'timeup';
+            break;
+        default:
+            return;
+        }
+        const audio = new Audio(`../assets/audio/${name}.mp3`);
+        audio.play();
+    }
