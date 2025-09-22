@@ -119,6 +119,9 @@ main #timer-section .timer-settings button {
   border-radius: 50%;
   transition: all 0.5s ease-out;
 }
+main #timer-section .timer-settings #play-button:disabled {
+  opacity: 0.1;
+}
 main #adjust-timer-section {
   position: absolute;
   top: 50%;

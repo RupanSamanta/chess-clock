@@ -53,7 +53,7 @@ export function switchTurn(currentKey, nextKey) {
     clearInterval(intervalId[currentKey]);
     timeLeftBox[currentKey].innerText =
     getFormattedTime(Math.ceil(current.timeLeft / 1000) * 1000);
-    
+
     // Start next turn
     next.startTurn();
     clearInterval(intervalId[nextKey]);
@@ -63,6 +63,7 @@ export function switchTurn(currentKey, nextKey) {
         if (next.timeUp) {
             next.elem.classList.add('time-up');
             clearInterval(intervalId[nextKey]);
+            buttons.play.disabled = true;
         }
         timeLeftBox[nextKey].innerText =
         getFormattedTime(Math.ceil(next.timeLeft / 1000) * 1000);
@@ -109,6 +110,7 @@ export function playTimer() {
             active.updateTime();
             if (active.timeUp) {
                 active.elem.classList.add('time-up');
+                buttons.play.disabled = true;
                 clearInterval(intervalId[activeKey]);
             }
             timeLeftBox[activeKey].innerText = getFormattedTime(active.timeLeft);
@@ -128,9 +130,11 @@ export function resetClock() {
         if (confirm('Reset Clock?')) {
             Object.keys(players).forEach(key => {
                 players[key].reset();
+                players[key].elem.classList.remove('time-up');
                 intervalId[key] = null;
             });
             updateTimeLeftHTML();
+            buttons.play.disabled = false;
         }
     },
         150);
