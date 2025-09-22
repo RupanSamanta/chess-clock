@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --activeBlockColor: #7BA05B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", arial;
+    user-select: none;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+// color variables
+$blockColor: #8B8987;
+$baseFontColor: #292928;
+$activeFontColor: #FFFFFF;
+$secondaryTextColor: #969493;
+$timeupcolor: #FE6F5E;
+$fontSize: 1.2rem;
+
+@mixin size {
+    width: 100%;
+    height: 100%;
+}
+@mixin flexBox($dir: row, $justify: center, $align: center, $gap: 0) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+@mixin pos_absolute($top: 50%, $left: 50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-50%, -50%);
+}
+
+button, input, select {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    color: $blockColor;
+    background-color: transparent;
+    transition: all 0.25s ease;
+}
+button:active {
+    background-color: $secondaryTextColor;
+    color: $baseFontColor;
+}
+
+html, body {
+    @include size;
+    overflow: hidden;
+    font-size: 14px;
+    background-color: $baseFontColor;
+}
+
+main {
+    @include size;
+
+    section {
+        @include size;
+    }
+    #timer-section {
+        @include flexBox(column, space-between, stretch, 0.5rem);
+        padding: 0.5rem;
+
+        .player-timer {
+            width: 100%;
+            max-height: 50%;
+            flex-basis: 0;
+            flex-grow: 1;
+            position: relative;
+            @include flexBox(column-reverse, space-between, flex-start);
+            background-color: $blockColor;
+            color: $baseFontColor;
+            padding: 1.5rem;
+            border-radius: 1.07rem; > div {
+                width: 100%;
+                @include flexBox($gap: 0.7rem);
+                font-size: $fontSize;
+            }
+            .time-left {
+                @include pos_absolute;
+                font-size: 7.2rem;
+                font-weight: 600;
+                color: inherit;
+            }
+            .time-adjust-button {
+                width: fit-content;
+            }
+        }
+        #player-A {
+            transform: rotateZ(180deg);
+        }
+        .active-player {
+            background-color: var(--activeBlockColor);
+            color: $activeFontColor;
+        }
+        .time-up {
+            background-color: $timeupcolor;
+        }
+
+        .timer-settings {
+            @include flexBox($justify: space-around);
+            background-color: $baseFontColor;
+            padding: 0.75rem;
+            border-radius: 1.07rem;
+            border: solid 0.15rem $secondaryTextColor;
+
+            button {
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 1.7rem;
+                border-radius: 50%;
+                transition: all 0.35s ease-out;
+            }
+            #play-button:disabled {
+                opacity: 0;
+            }
+        }
+    }
+    #adjust-timer-section {
+        @include pos_absolute;
+        @include size;
+        @include flexBox;
+        display: none;
+        background: rgba(0,0,0,0.5);
+
+        #adjust-timer {
+            width: fit-content;
+            max-width: 25rem;
+            height: fit-content;
+            @include flexBox($justify: space-between, $gap: 1.75rem);
+            flex-wrap: wrap;
+            background-color: $baseFontColor;
+            color: $secondaryTextColor;
+            font-size: $fontSize;
+            padding: 1.8rem;
+            border-radius: 0.75rem;
+
+            .header {
+                width: 100%;
+            }
+            .timer-block {
+                width: 5.5rem;
+                height: 6rem;
+                margin-bottom: 1rem;
+
+                select {
+                    appearance: none;
+                    webkit-appearance: none;
+                    @include size;
+                    color: $activeFontColor;
+                    background-color: rgba(255,255,255, 0.15);
+                    text-align: center;
+                    font-size: 3rem;
+                    border-radius: 0.75rem;
+                }
+                select:hover {
+                    background-color: var(--activeBlockColor);
+                }
+                span {
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+            }
+            .adjust-box-buttons {
+                width: 100%;
+                @include flexBox($justify: flex-start, $gap: 2rem);
+
+                button {
+                    font-size: $fontSize;
+                    padding: 0.75rem 0.85rem;
+                    border: solid 0.1rem $secondaryTextColor;
+                    border-radius: 0.75rem;
+                }
+            }
+        }
+    }
+
+    #controls-settings-section {
+        @include pos_absolute($left: 150%);
+        @include size;
+        display: none;
+        background-color: $baseFontColor;
+        overflow-y: auto;
+        transition: all 0.3s ease-in-out;
+
+        .section-header {
+            @include flexBox($justify: flex-start, $gap: 1.75rem);
+            width: 100%;
+            color: $activeFontColor;
+            font-size: $fontSize;
+            padding: 0.75rem;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            top: 0;
+
+            button {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: $fontSize;
+                color: $activeFontColor;
+            }
+        }
+
+        .preset-time, .theme-settings {
+            font-size: $fontSize;
+            color: $secondaryTextColor;
+            padding: 1.25rem;
+            margin: 4rem 0 0 0;
+
+            label {
+                width: 100%;
+                @include flexBox($justify: space-between);
+                padding: 0.5rem;
+                margin: 0.75rem 0;
+                padding-left: 0;
+                color: $activeFontColor;
+
+                input[type="radio"] {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border: solid 0.15rem $secondaryTextColor;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                    transition: all 0.25s ease;
+                }
+                input[type="radio"]::before {
+                    content: "";
+                    width: 0.85rem;
+                    height: 0.85rem;
+                    box-shadow: inset 1rem 1rem var(--activeBlockColor);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    transition: all 0.25s ease;
+                }
+                input[type="radio"]:checked::before {
+                    transform: scale(1);
+                }
+                input[type="radio"]:checked {
+                    border-color: var(--activeBlockColor);
+                }
+            }
+
+            #start-new-timer {
+                width: 100%;
+                padding: 1rem 0;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-shadow: 0 0 0.25rem rgba(0,0,0, 0.35);
+                color: $activeFontColor;
+                border-radius: 0.75rem;
+                border: solid 0.175rem $secondaryTextColor;
+            }
+            #start-new-timer:hover {
+                background-color: var(--activeBlockColor);
+                border-color: var(--activeBlockColor);
+            }
+        }
+        .theme-settings {
+            margin: 0;
+
+            #theme-colors-box {
+                margin: 0.75rem;
+                @include flexBox($justify: space-evenly, $gap: 0.75rem);
+                flex-wrap: wrap;
+
+                input[type="radio"] {
+                    width: 5rem;
+                    height: 2.5rem;
+                    border: solid 0.15rem var(--color);
+                    border-radius: 0.5rem;
+                    background-color: var(--color);
+                    display: grid;
+                    place-content: center;
+                    transition: all 0.25s ease;
+                }
+                input[type="radio"]::before {
+                    content: "";
+                    width: calc(5rem - 12px);
+                    height: calc(2.5rem - 12px);
+                    background-color: var(--color);
+                    border-radius: 0.25rem;
+                    transform: scale(0);
+                    transition: all 0.25s ease;
+                }
+                input[type="radio"]:checked::before {
+                    transform: scale(1);
+                }
+                input[type="radio"]:checked {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/*@media screen and (min-width: 768px) {
+}
+
+@media screen and (orientation: ladscape) {
+}*/
