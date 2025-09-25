@@ -217,8 +217,16 @@ main {
         .preset-time {
             font-size: $fontSize;
             color: $secondaryTextColor;
-            padding: 1.25rem;
-            
+            padding: 1.25rem; > div:first-child {
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    border: solid 0.1rem $secondaryTextColor;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                }
+            }
 
             label {
                 width: 100%;

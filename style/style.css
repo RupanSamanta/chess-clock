@@ -232,6 +232,15 @@ main #controls-settings-section .preset-time, main #controls-settings-section .t
   color: #969493;
   padding: 1.25rem;
 }
+main #controls-settings-section .preset-time > div:first-child, main #controls-settings-section .theme-settings > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+main #controls-settings-section .preset-time > div:first-child button, main #controls-settings-section .theme-settings > div:first-child button {
+  border: solid 0.1rem #969493;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
 main #controls-settings-section .preset-time label, main #controls-settings-section .theme-settings label {
   width: 100%;
   display: flex;
