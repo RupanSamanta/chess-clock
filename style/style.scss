@@ -196,11 +196,13 @@ main {
 
         .section-header {
             @include flexBox($justify: flex-start, $gap: 1.75rem);
+            position: sticky !important;
+            top: 0;
             width: 100%;
             color: $activeFontColor;
             font-size: $fontSize;
             padding: 0.75rem;
-            background: rgba(0,0,0,0.5);
+            background: #141414;
             position: absolute;
             top: 0;
 
@@ -212,11 +214,19 @@ main {
             }
         }
 
-        .preset-time, .theme-settings {
+        .preset-time {
             font-size: $fontSize;
             color: $secondaryTextColor;
-            padding: 1.25rem;
-            margin: 4rem 0 0 0;
+            padding: 1.25rem; > div:first-child {
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    border: solid 0.1rem $secondaryTextColor;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                }
+            }
 
             label {
                 width: 100%;
@@ -268,6 +278,7 @@ main {
             }
         }
         .theme-settings {
+            @extend .preset-time;
             margin: 0;
 
             #theme-colors-box {

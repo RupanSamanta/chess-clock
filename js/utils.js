@@ -111,7 +111,8 @@ export function playTimer() {
 
         intervalId[activeKey] = setInterval(() => {
             active.updateTime();
-            if (active.timeUp) {playAudio('timeup');
+            if (active.timeUp) {
+                playAudio('timeup');
                 active.elem.classList.add('time-up');
                 buttons.play.disabled = true;
                 clearInterval(intervalId[activeKey]);
@@ -230,6 +231,7 @@ export function initStartNewTimer() {
 }
 
 function playAudio(type) {
+    if (buttons.mute.dataset.mute === 'true') return;
     let name;
     switch (type) {
         case 'play':
@@ -245,5 +247,6 @@ function playAudio(type) {
             return;
         }
         const audio = new Audio(`../assets/audio/${name}.mp3`);
+        audio.load();
         audio.play();
     }

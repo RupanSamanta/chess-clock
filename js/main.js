@@ -54,7 +54,12 @@ players.B.elem.addEventListener('click', () => {
 buttons.play.addEventListener('click', playTimer);
 buttons.reset.addEventListener('click', resetClock);
 buttons.fullscreen.addEventListener('click', toggleFullscreen);
-buttons.saveTimer.addEventListener('click', saveNewTimer);
+buttons.saveTimer.addEventListener('click', saveNewTimer); 
+buttons.mute.addEventListener('click', () => {
+    const isMuted = buttons.mute.dataset.mute === "true";
+    buttons.mute.dataset.mute = !isMuted;
+    buttons.mute.innerHTML = `<i class="fa-solid fa-volume-${isMuted ? "high": "xmark"}"></i>`;
+});
 buttons.cancelTimer.addEventListener('click', ()=> {
     document.getElementById('adjust-timer-section').style.display = 'none';
 });
