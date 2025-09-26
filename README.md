@@ -9,7 +9,7 @@ A simple, elegant **Chess Clock** web app built with **HTML**, **CSS**, and **Ja
 * **Two-player chess clock** with separate timers
 * **Start / Pause / Reset** controls
 * **Turn switching** (tap/press to switch)
-* **Customizable time presets** (e.g., 3|2, 5|0, 10|5)
+* **Customizable time presets** (e.g., 3|2, 5, 10|5)
 * **Optional increment/delay** per move
 * **Sound notifications** for turn changes and time-outs
 * **Mobile-friendly** and accessible UI
@@ -18,14 +18,14 @@ A simple, elegant **Chess Clock** web app built with **HTML**, **CSS**, and **Ja
 
 ### 🧭 Demo
 
-Check out the live demo [here](https://your-live-demo-link.com).
+Check out the live demo [here](https://rupansamanta.github.io/chess-clock/).
 
 ---
 
 ### 🛠️ Built With
 
 * HTML5
-* CSS3
+* CSS3 (SCSS)
 * Vanilla JavaScript
 
 ---
@@ -50,7 +50,7 @@ No build tools are required for the basic app. To run a local development server
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/](https://github.com/)<your-username>/chess-clock.git
+    git clone https://github.com/https://github.com/RupanSamanta/chess-clock.git]
     ```
 2.  **Navigate to the project directory:**
     ```bash
@@ -115,4 +115,4 @@ This project is available under the **MIT License**.
 
 ### ✍️ Author
 
-[Your Name](https://github.com/your-github-handle) – Feel free to add your email, Twitter, or other contact info here.
+[Rupan Samanta](https://github.com/RupanSamanta/)
