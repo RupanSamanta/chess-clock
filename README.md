@@ -50,7 +50,7 @@ No build tools are required for the basic app. To run a local development server
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/RupanSamanta/chess-clock.git]
+    git clone https://github.com/RupanSamanta/chess-clock.git
     ```
 2.  **Navigate to the project directory:**
     ```bash
@@ -74,14 +74,14 @@ No build tools are required for the basic app. To run a local development server
 
 ---
 
-/*### 🧩 Configuration (Ideas)
+<!-- ### 🧩 Configuration (Ideas)
 
 This project is designed to be easily extendable. Here are a few ideas to get you started:
 
 * Add keyboard shortcuts (e.g., `Space` to switch, `P` to pause).
 * Add persistent settings using `localStorage` to remember the last used preset.
-* Implement themes (dark, light) and accessibility options (larger fonts).
-*/
+* Implement themes (dark, light) and accessibility options (larger fonts). -->
+
 ---
 
 ### ♻️ Contributing
