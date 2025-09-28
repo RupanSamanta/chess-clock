@@ -6,22 +6,29 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Outfit", arial;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 *:before, *:after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 button, input, select {
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   -webkit-appearance: none;
   border: none;
   outline: none;
   color: #8B8987;
   background-color: transparent;
+  -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
 
@@ -42,128 +49,214 @@ main {
   width: 100%;
   height: 100%;
 }
+
 main section {
   width: 100%;
   height: 100%;
 }
+
 main #timer-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   gap: 0.5rem;
   padding: 0.5rem;
 }
+
 main #timer-section .player-timer {
   width: 100%;
   max-height: 50%;
-  flex-basis: 0;
-  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 0;
   background-color: #8B8987;
   color: #292928;
   padding: 1.5rem;
   border-radius: 1.07rem;
 }
+
 main #timer-section .player-timer > div {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.7rem;
   font-size: 1.2rem;
 }
+
 main #timer-section .player-timer .time-left {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: 7.2rem;
   font-weight: 600;
   color: inherit;
 }
+
 main #timer-section .player-timer .time-adjust-button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
+
 main #timer-section #player-A {
-  transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
 }
+
 main #timer-section .active-player {
   background-color: var(--activeBlockColor);
   color: #FFFFFF;
 }
+
 main #timer-section .time-up {
   background-color: #FE6F5E;
 }
+
 main #timer-section .timer-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0;
   background-color: #292928;
   padding: 0.75rem;
   border-radius: 1.07rem;
   border: solid 0.15rem #969493;
 }
+
 main #timer-section .timer-settings button {
   width: 3.5rem;
   height: 3.5rem;
   font-size: 1.7rem;
   border-radius: 50%;
+  -webkit-transition: all 0.35s ease-out;
   transition: all 0.35s ease-out;
 }
+
 main #timer-section .timer-settings #play-button:disabled {
   opacity: 0;
 }
+
 main #adjust-timer-section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0;
   display: none;
   background: rgba(0, 0, 0, 0.5);
 }
+
 main #adjust-timer-section #adjust-timer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   max-width: 25rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.75rem;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: #292928;
   color: #969493;
   font-size: 1.2rem;
   padding: 1.8rem;
   border-radius: 0.75rem;
 }
+
 main #adjust-timer-section #adjust-timer .header {
   width: 100%;
 }
+
 main #adjust-timer-section #adjust-timer .timer-block {
   width: 5.5rem;
   height: 6rem;
   margin-bottom: 1rem;
 }
+
 main #adjust-timer-section #adjust-timer .timer-block select {
-  appearance: none;
-  webkit-appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  --webkit-appearance: none;
   width: 100%;
   height: 100%;
   color: #FFFFFF;
@@ -172,45 +265,72 @@ main #adjust-timer-section #adjust-timer .timer-block select {
   font-size: 3rem;
   border-radius: 0.75rem;
 }
+
 main #adjust-timer-section #adjust-timer .timer-block select:hover {
   background-color: var(--activeBlockColor);
 }
+
 main #adjust-timer-section #adjust-timer .timer-block span {
   font-size: 1rem;
   font-weight: 400;
 }
+
 main #adjust-timer-section #adjust-timer .adjust-box-buttons {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 2rem;
 }
+
 main #adjust-timer-section #adjust-timer .adjust-box-buttons button {
   font-size: 1.2rem;
   padding: 0.75rem 0.85rem;
   border: solid 0.1rem #969493;
   border-radius: 0.75rem;
 }
+
 main #controls-settings-section {
   position: absolute;
   top: 50%;
   left: 150%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   display: none;
   background-color: #292928;
   overflow-y: auto;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
 main #controls-settings-section .section-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.75rem;
+  position: -webkit-sticky !important;
   position: sticky !important;
   top: 0;
   width: 100%;
@@ -221,62 +341,91 @@ main #controls-settings-section .section-header {
   position: absolute;
   top: 0;
 }
+
 main #controls-settings-section .section-header button {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.2rem;
   color: #FFFFFF;
 }
+
 main #controls-settings-section .preset-time, main #controls-settings-section .theme-settings {
   font-size: 1.2rem;
   color: #969493;
   padding: 1.25rem;
 }
+
 main #controls-settings-section .preset-time > div:first-child, main #controls-settings-section .theme-settings > div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 main #controls-settings-section .preset-time > div:first-child button, main #controls-settings-section .theme-settings > div:first-child button {
   border: solid 0.1rem #969493;
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
+
 main #controls-settings-section .preset-time label, main #controls-settings-section .theme-settings label {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0;
   padding: 0.5rem;
   margin: 0.75rem 0;
   padding-left: 0;
   color: #FFFFFF;
 }
-main #controls-settings-section .preset-time label input[type=radio], main #controls-settings-section .theme-settings label input[type=radio] {
+
+main #controls-settings-section .preset-time label input[type="radio"], main #controls-settings-section .theme-settings label input[type="radio"] {
   width: 1.5rem;
   height: 1.5rem;
   border: solid 0.15rem #969493;
   border-radius: 50%;
+  display: -ms-grid;
   display: grid;
   place-content: center;
+  -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-main #controls-settings-section .preset-time label input[type=radio]::before, main #controls-settings-section .theme-settings label input[type=radio]::before {
+
+main #controls-settings-section .preset-time label input[type="radio"]::before, main #controls-settings-section .theme-settings label input[type="radio"]::before {
   content: "";
   width: 0.85rem;
   height: 0.85rem;
-  box-shadow: inset 1rem 1rem var(--activeBlockColor);
+  -webkit-box-shadow: inset 1rem 1rem var(--activeBlockColor);
+          box-shadow: inset 1rem 1rem var(--activeBlockColor);
   border-radius: 50%;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-main #controls-settings-section .preset-time label input[type=radio]:checked::before, main #controls-settings-section .theme-settings label input[type=radio]:checked::before {
-  transform: scale(1);
+
+main #controls-settings-section .preset-time label input[type="radio"]:checked::before, main #controls-settings-section .theme-settings label input[type="radio"]:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-main #controls-settings-section .preset-time label input[type=radio]:checked, main #controls-settings-section .theme-settings label input[type=radio]:checked {
+
+main #controls-settings-section .preset-time label input[type="radio"]:checked, main #controls-settings-section .theme-settings label input[type="radio"]:checked {
   border-color: var(--activeBlockColor);
 }
+
 main #controls-settings-section .preset-time #start-new-timer, main #controls-settings-section .theme-settings #start-new-timer {
   width: 100%;
   padding: 1rem 0;
@@ -287,52 +436,113 @@ main #controls-settings-section .preset-time #start-new-timer, main #controls-se
   border-radius: 0.75rem;
   border: solid 0.175rem #969493;
 }
+
 main #controls-settings-section .preset-time #start-new-timer:hover, main #controls-settings-section .theme-settings #start-new-timer:hover {
   background-color: var(--activeBlockColor);
   border-color: var(--activeBlockColor);
 }
+
 main #controls-settings-section .theme-settings {
   margin: 0;
 }
+
 main #controls-settings-section .theme-settings #theme-colors-box {
   margin: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-main #controls-settings-section .theme-settings #theme-colors-box input[type=radio] {
+
+main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"] {
   width: 5rem;
   height: 2.5rem;
   border: solid 0.15rem var(--color);
   border-radius: 0.5rem;
   background-color: var(--color);
+  display: -ms-grid;
   display: grid;
   place-content: center;
+  -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-main #controls-settings-section .theme-settings #theme-colors-box input[type=radio]::before {
+
+main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"]::before {
   content: "";
   width: calc(5rem - 12px);
   height: calc(2.5rem - 12px);
   background-color: var(--color);
   border-radius: 0.25rem;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-main #controls-settings-section .theme-settings #theme-colors-box input[type=radio]:checked::before {
-  transform: scale(1);
+
+main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"]:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-main #controls-settings-section .theme-settings #theme-colors-box input[type=radio]:checked {
+
+main #controls-settings-section .theme-settings #theme-colors-box input[type="radio"]:checked {
   background-color: transparent;
 }
 
-/*@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  main {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 }
 
-@media screen and (orientation: ladscape) {
-}*/
-
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  main #timer-section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto 1fr;
+        grid-template-rows: auto 1fr;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main #timer-section .timer-settings {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+  }
+  main #timer-section .player-timer {
+    max-height: none;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    height: 100%;
+    -webkit-transform: none !important;
+            transform: none !important;
+  }
+  main #timer-section .player-timer .time-left {
+    font-size: 4rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */

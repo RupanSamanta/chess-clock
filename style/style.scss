@@ -156,7 +156,7 @@ main {
 
                 select {
                     appearance: none;
-                    webkit-appearance: none;
+                    --webkit-appearance: none;
                     @include size;
                     color: $activeFontColor;
                     background-color: rgba(255,255,255, 0.15);
@@ -316,8 +316,37 @@ main {
     }
 }
 
-/*@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    main {
+        max-width: 480px;
+        margin: 0 auto;
+    }
 }
 
-@media screen and (orientation: ladscape) {
-}*/
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    main #timer-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .timer-settings {
+            width: 100%;
+            height: fit-content;
+            grid-row: 1;
+            grid-column: 1 / span 2;
+        }
+
+        .player-timer {
+            max-height: none;
+            flex-basis: auto;
+            height: 100%;
+            transform: none !important;
+            
+            .time-left {
+                font-size: 4rem;
+            }
+        }
+    }
+}
