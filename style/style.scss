@@ -11,7 +11,9 @@
     font-family: "Outfit", arial;
     user-select: none;
 }
-*:before, *:after {
+
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -27,6 +29,7 @@ $fontSize: 1.2rem;
     width: 100%;
     height: 100%;
 }
+
 @mixin flexBox($dir: row, $justify: center, $align: center, $gap: 0) {
     display: flex;
     flex-direction: $dir;
@@ -34,6 +37,7 @@ $fontSize: 1.2rem;
     align-items: $align;
     gap: $gap;
 }
+
 @mixin pos_absolute($top: 50%, $left: 50%) {
     position: absolute;
     top: $top;
@@ -41,7 +45,9 @@ $fontSize: 1.2rem;
     transform: translate(-50%, -50%);
 }
 
-button, input, select {
+button,
+input,
+select {
     appearance: none;
     -webkit-appearance: none;
     border: none;
@@ -50,12 +56,14 @@ button, input, select {
     background-color: transparent;
     transition: all 0.25s ease;
 }
+
 button:active {
     background-color: $secondaryTextColor;
     color: $baseFontColor;
 }
 
-html, body {
+html,
+body {
     @include size;
     overflow: hidden;
     font-size: 14px;
@@ -68,6 +76,7 @@ main {
     section {
         @include size;
     }
+
     #timer-section {
         @include flexBox(column, space-between, stretch, 0.5rem);
         padding: 0.5rem;
@@ -82,28 +91,35 @@ main {
             background-color: $blockColor;
             color: $baseFontColor;
             padding: 1.5rem;
-            border-radius: 1.07rem; > div {
+            border-radius: 1.07rem;
+
+            >div {
                 width: 100%;
                 @include flexBox($gap: 0.7rem);
                 font-size: $fontSize;
             }
+
             .time-left {
                 @include pos_absolute;
                 font-size: 7.2rem;
                 font-weight: 600;
                 color: inherit;
             }
+
             .time-adjust-button {
                 width: fit-content;
             }
         }
+
         #player-A {
             transform: rotateZ(180deg);
         }
+
         .active-player {
             background-color: var(--activeBlockColor);
             color: $activeFontColor;
         }
+
         .time-up {
             background-color: $timeupcolor;
         }
@@ -122,17 +138,19 @@ main {
                 border-radius: 50%;
                 transition: all 0.35s ease-out;
             }
+
             #play-button:disabled {
                 opacity: 0;
             }
         }
     }
+
     #adjust-timer-section {
         @include pos_absolute;
         @include size;
         @include flexBox;
         display: none;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
 
         #adjust-timer {
             width: fit-content;
@@ -149,6 +167,7 @@ main {
             .header {
                 width: 100%;
             }
+
             .timer-block {
                 width: 5.5rem;
                 height: 6rem;
@@ -159,19 +178,22 @@ main {
                     --webkit-appearance: none;
                     @include size;
                     color: $activeFontColor;
-                    background-color: rgba(255,255,255, 0.15);
+                    background-color: rgba(255, 255, 255, 0.15);
                     text-align: center;
                     font-size: 3rem;
                     border-radius: 0.75rem;
                 }
+
                 select:hover {
                     background-color: var(--activeBlockColor);
                 }
+
                 span {
                     font-size: 1rem;
                     font-weight: 400;
                 }
             }
+
             .adjust-box-buttons {
                 width: 100%;
                 @include flexBox($justify: flex-start, $gap: 2rem);
@@ -217,7 +239,9 @@ main {
         .preset-time {
             font-size: $fontSize;
             color: $secondaryTextColor;
-            padding: 1.25rem; > div:first-child {
+            padding: 1.25rem;
+
+            >div:first-child {
                 display: flex;
                 justify-content: space-between;
 
@@ -245,6 +269,7 @@ main {
                     place-content: center;
                     transition: all 0.25s ease;
                 }
+
                 input[type="radio"]::before {
                     content: "";
                     width: 0.85rem;
@@ -254,9 +279,11 @@ main {
                     transform: scale(0);
                     transition: all 0.25s ease;
                 }
+
                 input[type="radio"]:checked::before {
                     transform: scale(1);
                 }
+
                 input[type="radio"]:checked {
                     border-color: var(--activeBlockColor);
                 }
@@ -267,16 +294,18 @@ main {
                 padding: 1rem 0;
                 font-size: 1.5rem;
                 font-weight: 700;
-                text-shadow: 0 0 0.25rem rgba(0,0,0, 0.35);
+                text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.35);
                 color: $activeFontColor;
                 border-radius: 0.75rem;
                 border: solid 0.175rem $secondaryTextColor;
             }
+
             #start-new-timer:hover {
                 background-color: var(--activeBlockColor);
                 border-color: var(--activeBlockColor);
             }
         }
+
         .theme-settings {
             @extend .preset-time;
             margin: 0;
@@ -296,6 +325,7 @@ main {
                     place-content: center;
                     transition: all 0.25s ease;
                 }
+
                 input[type="radio"]::before {
                     content: "";
                     width: calc(5rem - 12px);
@@ -305,9 +335,11 @@ main {
                     transform: scale(0);
                     transition: all 0.25s ease;
                 }
+
                 input[type="radio"]:checked::before {
                     transform: scale(1);
                 }
+
                 input[type="radio"]:checked {
                     background-color: transparent;
                 }
@@ -320,32 +352,39 @@ main {
     main {
         max-width: 480px;
         margin: 0 auto;
+    
+        #controls-settings-section {
+            width: 480px;
+            max-width: 480px;
+        }
     }
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape) {
-    main #timer-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 1fr;
-        flex-direction: row;
-        flex-wrap: wrap;
+    main {
+        #timer-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-        .timer-settings {
-            width: 100%;
-            height: fit-content;
-            grid-row: 1;
-            grid-column: 1 / span 2;
-        }
+            .timer-settings {
+                width: 100%;
+                height: fit-content;
+                grid-row: 1;
+                grid-column: 1 / span 2;
+            }
 
-        .player-timer {
-            max-height: none;
-            flex-basis: auto;
-            height: 100%;
-            transform: none !important;
-            
-            .time-left {
-                font-size: 4rem;
+            .player-timer {
+                max-height: none;
+                flex-basis: auto;
+                height: 100%;
+                transform: none !important;
+
+                .time-left {
+                    font-size: 4rem;
+                }
             }
         }
     }
