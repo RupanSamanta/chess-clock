@@ -3,8 +3,7 @@ dist/
 build/
 
 # Ignore SCSS files (keep only compiled CSS)
-.css.map
-*.scss
+*.map
 
 # Ignore .github folder (actions, workflows, templates)
 .github/

@@ -272,8 +272,8 @@ main {
 
                 input[type="radio"]::before {
                     content: "";
-                    width: 0.85rem;
-                    height: 0.85rem;
+                    width: 0.9rem;
+                    height: 0.9rem;
                     box-shadow: inset 1rem 1rem var(--activeBlockColor);
                     border-radius: 50%;
                     transform: scale(0);
